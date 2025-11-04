@@ -205,6 +205,233 @@
             gap: 1rem;
         }
 
+        /* === ADMIN ACCESS === */
+        .admin-access {
+            position: relative;
+        }
+
+        .admin-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .admin-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--card-bg);
+            border-left: 1px solid var(--border-color);
+            padding: 2rem;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+            z-index: 2001;
+        }
+
+        .admin-panel.open {
+            right: 0;
+        }
+
+        .admin-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            display: none;
+        }
+
+        .admin-overlay.show {
+            display: block;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .admin-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .admin-section {
+            margin-bottom: 2rem;
+        }
+
+        .admin-section h3 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .admin-input {
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--secondary-bg);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .admin-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .admin-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .admin-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .admin-btn-primary {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .admin-btn-secondary {
+            background: var(--secondary-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        /* === IMAGE UPLOAD STYLES === */
+        .image-upload-container {
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--secondary-bg);
+        }
+
+        .image-upload-container:hover {
+            border-color: var(--accent-color);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .image-upload-container.dragover {
+            border-color: var(--accent-color);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .upload-text {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .upload-hint {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+        }
+
+        .image-preview {
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+        }
+
+        .remove-image {
+            background: #EF4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .uploaded-artworks {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .artwork-item {
+            padding: 1rem;
+            background: var(--secondary-bg);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .artwork-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .artwork-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .artwork-image {
+            max-width: 100%;
+            max-height: 100px;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
         /* === MODE TOGGLE === */
         .mode-toggle {
             display: flex;
@@ -463,6 +690,15 @@
             margin-bottom: 1.5rem;
         }
 
+        .artwork-image-display {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--border-color);
+        }
+
         .artwork-actions {
             display: flex;
             gap: 0.5rem;
@@ -630,6 +866,11 @@
                 padding: 10px 16px;
                 font-size: 0.9rem;
             }
+
+            .admin-panel {
+                width: 100%;
+                right: -100%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -663,6 +904,18 @@
             [data-theme="dark"] .theme-toggle::before {
                 transform: translateX(25px);
             }
+
+            .admin-btn span {
+                display: none;
+            }
+
+            .image-upload-container {
+                padding: 1rem;
+            }
+
+            .upload-icon {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -678,11 +931,85 @@
         <div class="grid-pattern"></div>
     </div>
 
+    <!-- Admin Panel Overlay -->
+    <div class="admin-overlay" id="adminOverlay"></div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h2 class="admin-title">🏛️ Admin Panel</h2>
+            <button class="close-btn" onclick="app.closeAdminPanel()">×</button>
+        </div>
+        
+        <div class="admin-section">
+            <h3>📁 Upload Artwork</h3>
+            <div class="admin-form">
+                <!-- Image Upload Area -->
+                <div class="image-upload-container" id="imageUploadContainer" onclick="document.getElementById('imageFileInput').click()">
+                    <div class="upload-icon">🖼️</div>
+                    <div class="upload-text">Click to upload artwork image</div>
+                    <div class="upload-hint">or drag and drop here</div>
+                    <input type="file" id="imageFileInput" class="file-input" accept="image/*" onchange="app.handleImageUpload(event)">
+                </div>
+                
+                <!-- Image Preview -->
+                <div class="image-preview" id="imagePreview">
+                    <img id="previewImage" src="" alt="Artwork preview">
+                    <button class="remove-image" onclick="app.removeUploadedImage()">Remove Image</button>
+                </div>
+
+                <input type="text" class="admin-input" id="adminArtworkName" placeholder="Artwork Name">
+                <input type="text" class="admin-input" id="adminArtist" placeholder="Artist">
+                <input type="text" class="admin-input" id="adminEra" placeholder="Era/Period">
+                <input type="text" class="admin-input" id="adminYear" placeholder="Year">
+                <input type="text" class="admin-input" id="adminType" placeholder="Type (Painting, Sculpture, etc.)">
+                <textarea class="admin-input admin-textarea" id="adminDescription" placeholder="Description"></textarea>
+                <textarea class="admin-input admin-textarea" id="adminSignificance" placeholder="Historical Significance"></textarea>
+                <input type="text" class="admin-input" id="adminLocation" placeholder="Current Location">
+                
+                <div class="admin-actions">
+                    <button class="admin-btn-primary" onclick="app.uploadArtwork()">
+                        💾 Save Artwork
+                    </button>
+                    <button class="admin-btn-secondary" onclick="app.clearAdminForm()">
+                        🗑️ Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h3>📊 Database Management</h3>
+            <div class="admin-actions">
+                <button class="admin-btn-primary" onclick="app.exportDatabase()">
+                    📥 Export DB
+                </button>
+                <button class="admin-btn-secondary" onclick="app.clearDatabase()">
+                    🗑️ Clear DB
+                </button>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h3>🖼️ Uploaded Artworks</h3>
+            <div class="uploaded-artworks" id="uploadedArtworksList">
+                <!-- Artworks will be populated here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Main App -->
     <div class="app">
         <header class="app-header">
             <h1>MuseVision</h1>
             <div class="header-controls">
+                <!-- Hidden Admin Access -->
+                <div class="admin-access">
+                    <button class="admin-btn" id="adminAccessBtn" title="Admin Access">
+                        ⚙️ <span>Admin</span>
+                    </button>
+                </div>
+                
                 <div class="mode-toggle">
                     <button class="mode-option active" data-mode="normal">Normal</button>
                     <button class="mode-option" data-mode="comfort">Comfort</button>
@@ -734,7 +1061,7 @@
                         <h2 class="modal-title">📷 Camera Access Required</h2>
                     </div>
                     <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
-                        MuseVsion needs camera access to scan artworks. Please allow camera permissions to continue.
+                        MuseVision needs camera access to scan artworks. Please allow camera permissions to continue.
                     </p>
                     <button class="scan-button" onclick="app.initCamera()" style="margin-top: 0;">
                         Allow Camera Access
@@ -778,7 +1105,12 @@
                 'Renaissance', 'Modern Art', 'Sculpture', 'Ancient History', 
                 'Asian Art', 'European Masters', 'Contemporary', 'Religious Art',
                 'Impressionism', 'Abstract', 'Portraits', 'Landscapes'
-            ]
+            ],
+            // Admin credentials (in production, this should be server-side)
+            ADMIN_CREDENTIALS: {
+                username: "museum_admin",
+                password: "MuseVision2024!"
+            }
         };
 
         // Main App Class
@@ -791,7 +1123,10 @@
                     scannedHistory: [],
                     currentArtwork: null,
                     visitorId: this.generateUUID(),
-                    cameraStream: null
+                    cameraStream: null,
+                    isAdmin: false,
+                    adminArtworks: [], // Database for admin-uploaded artworks
+                    currentUploadedImage: null
                 };
             }
 
@@ -802,6 +1137,8 @@
                 this.renderInterests();
                 this.updateTheme();
                 this.initCamera();
+                this.loadAdminArtworks();
+                this.setupDragAndDrop();
                 
                 console.log('MuseVision App Initialized');
             }
@@ -830,6 +1167,111 @@
                 if (savedFilters) this.state.filters = JSON.parse(savedFilters);
             }
 
+            // Load admin artworks from localStorage
+            loadAdminArtworks() {
+                const savedArtworks = localStorage.getItem('museversion_admin_artworks');
+                if (savedArtworks) {
+                    this.state.adminArtworks = JSON.parse(savedArtworks);
+                }
+                this.renderAdminArtworks();
+            }
+
+            // Save admin artworks to localStorage
+            saveAdminArtworks() {
+                localStorage.setItem('museversion_admin_artworks', JSON.stringify(this.state.adminArtworks));
+                this.renderAdminArtworks();
+            }
+
+            // Setup drag and drop for image upload
+            setupDragAndDrop() {
+                const uploadContainer = document.getElementById('imageUploadContainer');
+                
+                uploadContainer.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadContainer.classList.add('dragover');
+                });
+
+                uploadContainer.addEventListener('dragleave', (e) => {
+                    e.preventDefault();
+                    uploadContainer.classList.remove('dragover');
+                });
+
+                uploadContainer.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadContainer.classList.remove('dragover');
+                    
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        this.handleImageUpload({ target: { files: files } });
+                    }
+                });
+            }
+
+            // Handle image upload
+            handleImageUpload(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                // Check if file is an image
+                if (!file.type.startsWith('image/')) {
+                    this.showToast('Please upload an image file', 'error');
+                    return;
+                }
+
+                // Check file size (max 5MB)
+                if (file.size > 5 * 1024 * 1024) {
+                    this.showToast('Image size should be less than 5MB', 'error');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    this.state.currentUploadedImage = e.target.result;
+                    this.showImagePreview(this.state.currentUploadedImage);
+                    this.showToast('Image uploaded successfully!', 'success');
+                };
+                reader.readAsDataURL(file);
+            }
+
+            // Show image preview
+            showImagePreview(imageData) {
+                const previewContainer = document.getElementById('imagePreview');
+                const previewImage = document.getElementById('previewImage');
+                
+                previewImage.src = imageData;
+                previewContainer.style.display = 'block';
+            }
+
+            // Remove uploaded image
+            removeUploadedImage() {
+                this.state.currentUploadedImage = null;
+                document.getElementById('imagePreview').style.display = 'none';
+                document.getElementById('imageFileInput').value = '';
+                this.showToast('Image removed', 'info');
+            }
+
+            // Render admin artworks list
+            renderAdminArtworks() {
+                const container = document.getElementById('uploadedArtworksList');
+                if (this.state.adminArtworks.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No artworks uploaded yet.</p>';
+                    return;
+                }
+
+                container.innerHTML = this.state.adminArtworks.map(artwork => `
+                    <div class="artwork-item">
+                        ${artwork.imageData ? `<img src="${artwork.imageData}" class="artwork-image" alt="${artwork.name}">` : ''}
+                        <h4>${artwork.name}</h4>
+                        <p><strong>Artist:</strong> ${artwork.artist}</p>
+                        <p><strong>Type:</strong> ${artwork.type}</p>
+                        <p><strong>Uploaded:</strong> ${new Date(artwork.uploadedAt).toLocaleDateString()}</p>
+                        <button class="admin-btn-secondary" onclick="app.deleteArtwork('${artwork.id}')" style="margin-top: 0.5rem; padding: 6px 12px; font-size: 0.8rem;">
+                            🗑️ Delete
+                        </button>
+                    </div>
+                `).join('');
+            }
+
             // Setup event listeners
             setupEventListeners() {
                 // Mode toggle
@@ -842,6 +1284,11 @@
                 // Theme toggle
                 document.getElementById('themeToggle').addEventListener('click', () => {
                     this.toggleTheme();
+                });
+
+                // Admin access
+                document.getElementById('adminAccessBtn').addEventListener('click', () => {
+                    this.requestAdminAccess();
                 });
 
                 // Age filter
@@ -877,6 +1324,140 @@
                         e.target.classList.add('hidden');
                     }
                 });
+
+                // Close admin panel when clicking overlay
+                document.getElementById('adminOverlay').addEventListener('click', () => {
+                    this.closeAdminPanel();
+                });
+            }
+
+            // Request admin access
+            requestAdminAccess() {
+                if (this.state.isAdmin) {
+                    this.openAdminPanel();
+                    return;
+                }
+
+                const username = prompt('Enter admin username:');
+                if (!username) return;
+
+                const password = prompt('Enter admin password:');
+                if (!password) return;
+
+                if (username === CONFIG.ADMIN_CREDENTIALS.username && 
+                    password === CONFIG.ADMIN_CREDENTIALS.password) {
+                    this.state.isAdmin = true;
+                    this.openAdminPanel();
+                    this.showToast('Admin access granted!', 'success');
+                } else {
+                    this.showToast('Invalid credentials', 'error');
+                }
+            }
+
+            // Open admin panel
+            openAdminPanel() {
+                if (!this.state.isAdmin) {
+                    this.showToast('Admin access required', 'error');
+                    return;
+                }
+
+                document.getElementById('adminPanel').classList.add('open');
+                document.getElementById('adminOverlay').classList.add('show');
+            }
+
+            // Close admin panel
+            closeAdminPanel() {
+                document.getElementById('adminPanel').classList.remove('open');
+                document.getElementById('adminOverlay').classList.remove('show');
+            }
+
+            // Upload artwork to database
+            uploadArtwork() {
+                const name = document.getElementById('adminArtworkName').value.trim();
+                const artist = document.getElementById('adminArtist').value.trim();
+                const era = document.getElementById('adminEra').value.trim();
+                const year = document.getElementById('adminYear').value.trim();
+                const type = document.getElementById('adminType').value.trim();
+                const description = document.getElementById('adminDescription').value.trim();
+                const significance = document.getElementById('adminSignificance').value.trim();
+                const location = document.getElementById('adminLocation').value.trim();
+
+                if (!name || !artist || !description) {
+                    this.showToast('Please fill in required fields: Name, Artist, and Description', 'error');
+                    return;
+                }
+
+                const artwork = {
+                    id: this.generateUUID(),
+                    name,
+                    artist,
+                    era: era || 'Unknown Period',
+                    year: year || 'Unknown',
+                    type: type || 'Artwork',
+                    description,
+                    significance: significance || 'Cultural and historical significance',
+                    location: location || 'Unknown Location',
+                    imageData: this.state.currentUploadedImage,
+                    uploadedAt: new Date().toISOString(),
+                    source: 'admin',
+                    confidence: 'verified'
+                };
+
+                this.state.adminArtworks.push(artwork);
+                this.saveAdminArtworks();
+                this.clearAdminForm();
+                this.showToast('Artwork uploaded to database!', 'success');
+            }
+
+            // Clear admin form
+            clearAdminForm() {
+                document.getElementById('adminArtworkName').value = '';
+                document.getElementById('adminArtist').value = '';
+                document.getElementById('adminEra').value = '';
+                document.getElementById('adminYear').value = '';
+                document.getElementById('adminType').value = '';
+                document.getElementById('adminDescription').value = '';
+                document.getElementById('adminSignificance').value = '';
+                document.getElementById('adminLocation').value = '';
+                this.removeUploadedImage();
+            }
+
+            // Delete artwork from database
+            deleteArtwork(artworkId) {
+                if (confirm('Are you sure you want to delete this artwork?')) {
+                    this.state.adminArtworks = this.state.adminArtworks.filter(art => art.id !== artworkId);
+                    this.saveAdminArtworks();
+                    this.showToast('Artwork deleted from database', 'success');
+                }
+            }
+
+            // Export database
+            exportDatabase() {
+                const data = {
+                    adminArtworks: this.state.adminArtworks,
+                    exportDate: new Date().toISOString(),
+                    totalArtworks: this.state.adminArtworks.length
+                };
+
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `musevision-database-${new Date().toISOString().split('T')[0]}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                this.showToast('Database exported!', 'success');
+            }
+
+            // Clear database
+            clearDatabase() {
+                if (confirm('Are you sure you want to clear the entire database? This action cannot be undone.')) {
+                    this.state.adminArtworks = [];
+                    this.saveAdminArtworks();
+                    this.showToast('Database cleared!', 'success');
+                }
             }
 
             // Render interests
@@ -1048,60 +1629,49 @@
                 // Simulate API delay
                 await new Promise(resolve => setTimeout(resolve, 2000));
 
-                const demoArtworks = [
-                    {
-                        id: this.generateUUID(),
-                        name: "The Starry Night",
-                        artist: "Vincent van Gogh",
-                        era: "Post-Impressionism",
-                        year: "1889",
-                        type: "Oil Painting",
-                        description: "A famous painting depicting a swirling night sky over a quiet town, with a large cypress tree in the foreground. Van Gogh created this masterpiece while in an asylum in Saint-Rémy-de-Provence.",
-                        significance: "This painting is one of the most recognized works in Western art and represents Van Gogh's unique style of expressive brushwork and vibrant color.",
-                        location: "Museum of Modern Art, New York",
-                        scanTime: new Date().toISOString(),
-                        confidence: "high"
-                    },
-                    {
-                        id: this.generateUUID(),
-                        name: "The Persistence of Memory",
-                        artist: "Salvador Dalí",
-                        era: "Surrealism",
-                        year: "1931",
-                        type: "Oil Painting",
-                        description: "This iconic painting features melting clocks in a desert landscape, symbolizing the fluidity and subjectivity of time in dreams and unconscious states.",
-                        significance: "One of the most famous Surrealist works that explores themes of time, reality, and the unconscious mind.",
-                        location: "Museum of Modern Art, New York",
-                        scanTime: new Date().toISOString(),
-                        confidence: "high"
-                    },
-                    {
-                        id: this.generateUUID(),
-                        name: "Girl with a Pearl Earring",
-                        artist: "Johannes Vermeer",
-                        era: "Dutch Golden Age",
-                        year: "1665",
-                        type: "Oil Painting",
-                        description: "A captivating portrait of a young woman wearing a pearl earring and an exotic turban, looking over her shoulder with a mysterious expression.",
-                        significance: "Often called the 'Mona Lisa of the North', this masterpiece showcases Vermeer's exceptional skill with light and intimate portraiture.",
-                        location: "Mauritshuis, The Hague",
-                        scanTime: new Date().toISOString(),
-                        confidence: "high"
-                    }
-                ];
+                // Check if we have admin-uploaded artworks first
+                if (this.state.adminArtworks.length > 0) {
+                    const randomArtwork = this.state.adminArtworks[Math.floor(Math.random() * this.state.adminArtworks.length)];
+                    this.state.currentArtwork = randomArtwork;
+                    this.state.scannedHistory.push({
+                        ...randomArtwork,
+                        timestamp: new Date().toISOString(),
+                        scanId: this.generateUUID()
+                    });
 
-                const randomArtwork = demoArtworks[Math.floor(Math.random() * demoArtworks.length)];
+                    this.displayArtworkInfo(randomArtwork);
+                    this.logScanActivity(randomArtwork);
+                    this.showToast(`Identified: ${randomArtwork.name}`, 'success');
+                } else {
+                    // Fallback to demo artworks
+                    const demoArtworks = [
+                        {
+                            id: this.generateUUID(),
+                            name: "The Starry Night",
+                            artist: "Vincent van Gogh",
+                            era: "Post-Impressionism",
+                            year: "1889",
+                            type: "Oil Painting",
+                            description: "A famous painting depicting a swirling night sky over a quiet town, with a large cypress tree in the foreground. Van Gogh created this masterpiece while in an asylum in Saint-Rémy-de-Provence.",
+                            significance: "This painting is one of the most recognized works in Western art and represents Van Gogh's unique style of expressive brushwork and vibrant color.",
+                            location: "Museum of Modern Art, New York",
+                            scanTime: new Date().toISOString(),
+                            confidence: "high"
+                        }
+                    ];
 
-                this.state.currentArtwork = randomArtwork;
-                this.state.scannedHistory.push({
-                    ...randomArtwork,
-                    timestamp: new Date().toISOString(),
-                    scanId: this.generateUUID()
-                });
+                    const randomArtwork = demoArtworks[Math.floor(Math.random() * demoArtworks.length)];
+                    this.state.currentArtwork = randomArtwork;
+                    this.state.scannedHistory.push({
+                        ...randomArtwork,
+                        timestamp: new Date().toISOString(),
+                        scanId: this.generateUUID()
+                    });
 
-                this.displayArtworkInfo(randomArtwork);
-                this.logScanActivity(randomArtwork);
-                this.showToast(`Identified: ${randomArtwork.name}`, 'success');
+                    this.displayArtworkInfo(randomArtwork);
+                    this.logScanActivity(randomArtwork);
+                    this.showToast(`Identified: ${randomArtwork.name}`, 'success');
+                }
 
                 scanButton.classList.remove('loading');
                 scanButton.innerHTML = '<span>📷 Capture & Scan</span>';
@@ -1304,9 +1874,11 @@
                                 <span class="meta-tag">${artwork.artist}</span>
                                 ${artwork.year !== 'Unknown' ? `<span class="meta-tag">${artwork.year}</span>` : ''}
                                 ${artwork.confidence === 'medium' ? `<span class="meta-tag" style="background: #F59E0B;">Tentative</span>` : ''}
+                                ${artwork.source === 'admin' ? `<span class="meta-tag" style="background: #10B981;">Verified</span>` : ''}
                             </div>
                         </div>
                     </div>
+                    ${artwork.imageData ? `<img src="${artwork.imageData}" class="artwork-image-display" alt="${artwork.name}">` : ''}
                     <div class="artwork-description">${description}</div>
                     <div style="margin-bottom: 1rem; padding: 10px; background: rgba(139, 92, 246, 0.1); border-radius: 8px;">
                         <strong>Historical Significance:</strong> ${artwork.significance}
